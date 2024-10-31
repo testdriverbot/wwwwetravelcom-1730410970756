@@ -1,0 +1,55 @@
+version: 4.0.78
+steps:
+  - prompt: Click "Try For Free."
+    commands:
+      - command: hover-text
+        text: Try For Free
+        description: button to start a free trial
+        action: click
+  - prompt: Assert that a sign-up or registration form shows.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Complete the form with any required information.
+    commands:
+      - command: hover-text
+        text: Your Email
+        description: email input field
+        action: click
+      - command: type
+        text: test@example.com
+  - prompt: >-
+      Assert that a success message or welcome page appears.  # Use the content
+      of the file from the environment
+    commands:
+      - command: hover-text
+        text: Your Email
+        description: email input field
+        action: click
+  - prompt: >-
+      Assert that a success message or welcome page appears.  # Use the content
+      of the file from the environment
+    commands:
+      - command: hover-text
+        text: Next
+        description: button to proceed with the sign-up
+        action: click
+      - command: wait
+        timeout: 5000
+      - command: scroll-until-text
+        text: Welcome
+        direction: down
+  - prompt: >-
+      Assert that a success message or welcome page appears.  # Use the content
+      of the file from the environment
+    commands:
+      - command: hover-text
+        text: Password
+        description: password input field
+        action: click
+      - command: type
+        text: password123
+      - command: hover-text
+        text: Log In
+        description: login button
+        action: click
