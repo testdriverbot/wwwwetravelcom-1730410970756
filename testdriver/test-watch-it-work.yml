@@ -1,0 +1,18 @@
+version: 4.0.78
+steps:
+  - prompt: Click "Watch It Work."
+    commands:
+      - command: hover-text
+        text: Watch It Work
+        description: button to watch a demonstration
+        action: click
+  - prompt: Assert that a video or demonstration of the product begins playing.
+    commands:
+      - command: assert
+        expect: the video is playing
+  - prompt: >-
+      Assert there are no errors during playback.  # Use the content of the file
+      from the environment
+    commands:
+      - command: assert
+        expect: no error messages are visible
