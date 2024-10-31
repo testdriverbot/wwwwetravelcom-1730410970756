@@ -1,0 +1,26 @@
+version: 4.0.78
+steps:
+  - prompt: Hover over "Academy" in the header.
+    commands:
+      - command: hover-text
+        text: Academy
+        description: link in the header
+        action: hover
+  - prompt: Click "Courses."
+    commands:
+      - command: hover-text
+        text: Courses
+        description: link in the header
+        action: click
+  - prompt: Click "Courses."
+    commands:
+      - command: hover-text
+        text: Courses
+        description: link in the header
+        action: click
+  - prompt: Click "Courses."
+    commands:
+      - command: hover-text
+        text: Courses
+        description: link in the header
+        action: click
