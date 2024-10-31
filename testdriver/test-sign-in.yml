@@ -1,0 +1,32 @@
+version: 4.0.78
+steps:
+  - prompt: Click "Sign In."
+    commands:
+      - command: hover-text
+        text: Search Google or type a URL
+        description: main google search
+        action: click
+  - prompt: Click "Sign In."
+    commands:
+      - command: hover-text
+        text: SIGN IN
+        description: sign in button in the header
+        action: click
+  - prompt: Assert that a login form appears.
+    commands:
+      - command: assert
+        expect: the login form is visible
+  - prompt: Enter valid test credentials.
+    commands:
+      - command: hover-text
+        text: Your Email
+        description: email input field in the login form
+        action: click
+      - command: type
+        text: test@example.com
+  - prompt: >-
+      Assert that the user dashboard or homepage is displayed.  # Use the
+      content of the file from the environment
+    commands:
+      - command: assert
+        expect: the user dashboard is visible
