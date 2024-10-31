@@ -1,0 +1,47 @@
+version: 4.0.78
+steps:
+  - prompt: Scroll to the bottom of the page.
+    commands:
+      - command: scroll
+        direction: down
+  - prompt: Scroll to the bottom of the page.
+    commands:
+      - command: scroll-until-text
+        text: Contact Us
+        direction: down
+  - prompt: Enter an email address in the newsletter subscription field.
+    commands:
+      - command: hover-text
+        text: Subscribe
+        description: newsletter subscription field
+        action: click
+      - command: type
+        text: test@example.com
+  - prompt: Enter an email address in the newsletter subscription field.
+    commands:
+      - command: hover-text
+        text: Your Email
+        description: email input field in the pop-up
+        action: click
+      - command: type
+        text: test@example.com
+  - prompt: Click "Subscribe."
+    commands:
+      - command: hover-text
+        text: Next
+        description: button to proceed with subscription
+        action: click
+  - prompt: Click "Subscribe."
+    commands:
+      - command: hover-text
+        text: Subscribe
+        description: button to complete subscription
+        action: click
+  - prompt: Click "Subscribe."
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Subscribe
+        description: button to complete newsletter subscription
+        action: click
