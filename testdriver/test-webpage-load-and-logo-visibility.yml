@@ -1,0 +1,24 @@
+version: 4.0.78
+steps:
+  - prompt: Assert that the webpage loads successfully.
+    commands:
+      - command: wait-for-text
+        text: >-
+          the booking & payments platform for multi-day and group travel
+          businesses
+      - command: assert
+        expect: the webpage loads successfully
+  - prompt: Assert that the logo is visible on the homepage.
+    commands:
+      - command: wait-for-text
+        text: WeTravel
+      - command: assert
+        expect: the logo is visible on the homepage
+  - prompt: >-
+      Handle cookie banner if it appears by clicking "Accept All Cookies" before
+      continuing.  # Use the content of the file from the environment
+    commands:
+      - command: hover-text
+        text: Accept All Cookies
+        description: button to accept cookies
+        action: click
