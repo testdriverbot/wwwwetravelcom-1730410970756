@@ -1,0 +1,73 @@
+version: 4.0.78
+steps:
+  - prompt: Click "Contact Us" in the footer.
+    commands:
+      - command: scroll-until-text
+        text: Contact Us
+        direction: down
+      - command: hover-text
+        text: Contact Us
+        description: link in the footer
+        action: click
+  - prompt: Assert that a contact page or form shows.
+    commands:
+      - command: assert
+        expect: the contact page is displayed
+  - prompt: Fill in the form with test data.
+    commands:
+      - command: hover-text
+        text: First Name*
+        description: first name field
+        action: click
+      - command: type
+        text: Test
+      - command: hover-text
+        text: Last Name*
+        description: last name field
+        action: click
+      - command: type
+        text: User
+      - command: hover-text
+        text: Email*
+        description: email field
+        action: click
+      - command: type
+        text: testuser@example.com
+      - command: hover-text
+        text: Country*
+        description: country dropdown
+        action: click
+      - command: type
+        text: Test Country
+      - command: hover-text
+        text: Website URL*
+        description: website URL field
+        action: click
+      - command: type
+        text: http://example.com
+      - command: hover-text
+        text: Comment*
+        description: comment field
+        action: click
+      - command: type
+        text: This is a test comment.
+  - prompt: Fill in the form with test data.
+    commands:
+      - command: hover-text
+        text: Email*
+        description: email field
+        action: click
+      - command: type
+        text: validemail@example.com
+  - prompt: Fill in the form with test data.
+    commands:
+      - command: hover-text
+        text: Email*
+        description: email field
+        action: click
+      - command: type
+        text: validemail@example.com
+      - command: hover-text
+        text: Submit
+        description: submit button
+        action: click
