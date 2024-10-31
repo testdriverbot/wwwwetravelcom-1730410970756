@@ -1,0 +1,20 @@
+version: 4.0.78
+steps:
+  - prompt: Hover over "Pricing" in the header.
+    commands:
+      - command: hover-text
+        text: Pricing
+        description: link in the header
+        action: hover
+  - prompt: Click one of the pricing options.
+    commands:
+      - command: hover-text
+        text: Try For Free
+        description: button for a pricing option
+        action: click
+  - prompt: >-
+      Assert that a pricing page is displayed.  # Use the content of the file
+      from the environment
+    commands:
+      - command: assert
+        expect: the pricing page is displayed
