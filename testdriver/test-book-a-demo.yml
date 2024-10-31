@@ -1,0 +1,26 @@
+version: 4.0.78
+steps:
+  - prompt: Click "Book a Demo."
+    commands:
+      - command: hover-text
+        text: BOOK A DEMO
+        description: button in the header
+        action: click
+  - prompt: Assert that a scheduling form or calendar shows.
+    commands:
+      - command: assert
+        expect: Request a WeTravel demo form is visible
+  - prompt: Select a date and time for the demo.
+    commands:
+      - command: scroll-until-text
+        text: Select a Date
+        direction: down
+  - prompt: Select a date and time for the demo.
+    commands:
+      - command: scroll
+        direction: down
+  - prompt: Select a date and time for the demo.
+    commands:
+      - command: scroll-until-text
+        text: Select Date and Time
+        direction: down
